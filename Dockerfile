@@ -8,9 +8,7 @@ COPY package.json pnpm-lock.yaml ./
 
 RUN npm install -g corepack@latest
 
-RUN corepack enable pnpm
-
-RUN pnpm install --frozen-lockfile
+RUN corepack enable pnpm && pnpm install
 
 # Copy the rest of your app's source code
 COPY . .
