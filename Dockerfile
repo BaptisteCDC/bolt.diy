@@ -6,8 +6,7 @@ WORKDIR /app
 # Install dependencies (this step is cached as long as the dependencies don't change)
 COPY package.json pnpm-lock.yaml ./
 
-
-RUN corepack enable pnpm
+RUN curl -fsSL https://get.pnpm.io/install.sh | env PNPM_VERSION=10.0.0 sh -
 
 RUN pnpm install
 
